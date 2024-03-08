@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  node_service_1:
+    build:
+      context: ./node_service_1
+    command: npm start
+    ports:
+      - "3001:3000"
+    # environment:
+    #   Add any necessary environment variables for node_service_1
+
+  node_service_2:
+    build:
+      context: ./node_service_2
+    command: npm start
+    ports:
+      - "3002:3000"
+  #   environment:
+  #     # Add any necessary environment variables for node_service_2
+
+  # react_app:
+  #   build:
+  #     context: ./my-app
+  #   command: npm start
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     REACT_APP_API_URL_1: http://node_service_1:3001  # Update with the correct backend URL
+  #     # REACT_APP_API_URL_2: http://node_service_2:3002  # Update with the correct backend URL
